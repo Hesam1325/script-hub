@@ -1,0 +1,79 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Game : Pls Donate","BloodTheme")
+
+--tabs
+local Tab1 = Window:NewTab("Mine")
+
+local Tab2 = Window:NewTab("Misc")
+
+local Tab3 = Window:NewTab("Script")
+
+local Tab4 = Window:NewTab("information")
+
+--section
+local Section1 = Tab1:NewSection("")
+
+local Section2 = Tab2:NewSection("")
+
+local Section3 = Tab3:NewSection("")
+
+local Section4 = Tab4:NewSection("")
+
+--Mine
+Section1:NewSlider("Speed", "SliderInfo", 500, 10, function(q)
+ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = q
+end)
+
+Section1:NewSlider("Jump Power", "SliderInfo", 500, 10, function(s)
+ game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+Section1:NewButton("Reset Speed", "", function()
+ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+Section1:NewButton("Reset Jump Power", "", function()
+ game.Players.LocalPlayer.Character.Humanoid.JumpPower = 55
+end)
+
+--cradits
+Section4:NewLabel("HI")
+
+Section4:NewLabel("Im Hesam")
+
+Section4:NewLabel("This Script Created  By 10 Script For Any Suported Game")
+
+Section4:NewLabel("every 7 Day (Weak) Im Update The Script")
+
+Section4:NewLabel("And In Every Update I Add 1 Game Support.")
+
+Section4:NewLabel("OK Anyway Thx For Using This Script And I Hope You Enjoy")
+
+Section4:NewLabel("Made By Hesam1325 On Github")
+
+--Misc
+Section2:NewButton("Anti-Afk", "", function()
+ local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+end)
+
+Section2:NewButton("Esp", "", function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/SimpleESP.lua", true))()
+end)
+
+Section2:NewButton("Infinit Yield", "", function()
+ loadstring(game:HttpGet(('https://pastebin.com/raw/tzTXmYf2'),true))()
+end)
+
+--game
+Section3:NewButton("R15 GUI", "", function()
+   loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
+end)
+
+Section3:NewButton("V.G HUB", "", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub"))()
+end)
